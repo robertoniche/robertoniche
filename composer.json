@@ -93,7 +93,8 @@
         "symfony": {
             "allow-contrib": false,
             "require": "7.0.*"
-        }
+        },
+	"public-dir": "public_html"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",

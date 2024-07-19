@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="author" content="Roberto Niche">
+	<meta name="description" content="Desenvolvedor de aplicações web e mobile, utilizando as tecnologias php, react.js, html, css, javascript, typescript, node.js.">
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="css/font-icons.css">
+	<link rel="stylesheet" href="one-page/css/et-line.css">
+
+	<!-- One Page Module Specific Stylesheet -->
+	<link rel="stylesheet" href="one-page/onepage.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link id="favicon" rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
+
+	<!-- Document Title
+	============================================= -->
+	<title>RN Web & Mobile</title>
+
+	<style>
+
+		:root {
+			--cnvs-themecolor: #6C63FF;
+		}
+
+		body.stretched #header.full-header .container { padding-right: 56px; }
+
+		.slider-element {
+			background-image: linear-gradient(to right, #FFF 20%, rgba(108, 99, 255, .2) 100%);
+			background-position: right top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding: 30px 0;
+		}
+
+		.top-title {
+			display: block;
+			position: relative;
+			padding-left: 60px;
+			margin-bottom: 10px;
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: var(--cnvs-themecolor);
+		}
+
+		.top-title::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 50px;
+			height: 2px;
+			margin-top: -1px;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.slider-element p {
+			font-size: 16px;
+    		line-height: 1.75;
+    		font-weight: 400;
+    		color: #999;
+		}
+
+		.social-icons {
+			position: absolute;
+			top: 0;
+			right: 0;
+			padding: 0 20px;
+			height: 100vh;
+			background-color: #FFF;
+			z-index: 5;
+		}
+
+		@media (max-width: 991.98px) {
+			.social-icons {
+				position: relative;
+				padding: 0 20px;
+				height: auto;
+				width: 100%;
+				background-color: transparent;
+			}
+
+			.social-icons .separator { display: none; }
+		}
+
+		.social-icons .social-icon {
+			position: relative;
+			margin: 4px 2px;
+			color: rgba(0, 0, 0, 0.4);
+		}
+		.social-icons .separator {
+			width: 2px;
+			height: 60px;
+			background-color: rgba(0, 0, 0, 0.06);
+			margin: 10px 0;
+		}
+
+		.form-group {
+			position: relative;
+			padding: 10px 20px;
+			border-radius: 2px;
+			background-color: #FFF;
+		}
+		#widget-subscribe-form-email-error {
+			text-indent: -9999px;
+			height: 0;
+			margin: 0 !important;
+		}
+
+		#widget-subscribe-form-email-error { display: block !important; }
+
+		.form-group input + #widget-subscribe-form-email-error::after {
+			content: "";
+			font-family: 'bootstrap-icons';
+			position: absolute;
+			top: 50%;
+			right: 5%;
+			font-size: 24px;
+			transform: translateY(-50%);
+			text-indent: 0;
+			cursor: default;
+			color: red;
+		}
+
+		.form-group input.error + #widget-subscribe-form-email-error::after {
+			content: "\F333";
+			color: red;
+		}
+		.form-control.valid + #widget-subscribe-form-email-error::after {
+			content: "\F26B";
+			color: green;
+		}
+
+		.form-group input:not(:focus) + #widget-subscribe-form-email-error::after { content: none; }
+
+		.form-group label {
+			font-size: 13px;
+			font-weight: 500;
+			text-transform: none;
+			letter-spacing: 0;
+			margin-bottom: 0;
+		}
+
+		.form-group input {
+			position: relative;
+			background-color: transparent;
+			border: 0;
+			padding: 0;
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		.form-group input:active,
+		.form-group input:focus {
+		    border-color: transparent;
+		    background-color: transparent;
+		}
+
+	</style>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+
+            <!-- Header
+            ============================================= -->
+            <header id="header" class="full-header header-size-custom" data-sticky-shrink="false">
+
+                <div id="header-wrap">
+                    <div class="container">
+                        <div class="header-row">
+
+                            <!-- Logo
+                            ============================================= -->
+                            <div id="logo">
+                                <a href="/">
+                                    <img class="logo-default" srcset="/images/logo.png, /images/logo@2x.png 2x" src="/images/logo@2x.png" alt="RN Web & Mobile">
+                                </a>
+                            </div><!-- #logo end -->
+
+                            <div class="primary-menu-trigger">
+                                <button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+                                    <span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+                                </button>
+                            </div>
+
+                            <!-- Primary Navigation
+                            ============================================= -->
+                            <nav class="primary-menu">
+
+                                <ul class="one-page-menu menu-container" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                                    <li class="menu-item">
+                                        <a href="#" class="menu-link" data-href="#wrapper"><div>Home</div></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="menu-link" data-href="#section-about"><div>Sobre</div></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="menu-link" data-href="#section-works"><div>Trabalhos</div></a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#" class="menu-link" data-href="#section-services"><div>Serviços</div></a>
+                                    </li>                                    
+                                    <li class="menu-item">
+                                        <a href="#" class="menu-link" data-href="#section-contact"><div>Contato</div></a>
+                                    </li>
+                                </ul>
+
+                            </nav><!-- #primary-menu end -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="header-wrap-clone"></div>
+
+            </header><!-- #header end -->
+
+		<!-- Slider
+		============================================= -->
+		<section id="slider" class="slider-element min-vh-60 min-vh-md-100 include-header">
+
+                    <div class="slider-inner">
+                        <div class="vertical-middle">
+
+                            <div class="container">
+                                <div class="row align-items-center justify-content-between py-5">
+
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="subscribe-widget" data-loader="button" data-alert-type="inline">
+                                            <h1 class="display-4 text-transform-none" style="letter-spacing:-1px; line-height: 1;"><div class="top-title">O que deseja</div>
+                                                <span class="text-rotater nocolor" style="font-family: 'Playfair Display';" data-separator="|" data-rotate="fadeIn" data-speed="1300"><span class="t-rotate fw-bold opm-large-word">Sistemas|Sites|Mobile|Análise|Consultoria|Dashboard|Power BI</span></span>
+                                            </h1>
+                                            <p class="mb-5">Transforme sua visão digital com sistemas robustos, sites envolventes e aplicativos mobile, aliados à análise detalhada e consultoria estratégica, tudo potencializado por dashboards interativos e insights poderosos do Power BI.</p>
+                                            <div class="widget-subscribe-form-result"></div>
+                                            <form id="slider-subscribe-form" action="include/subscribe.php" method="post" class="nomb-5">
+                                                <div class="form-group shadow-sm border rounded">
+                                                    <label for="widget-subscribe-form-email" class="color">Informe seu e-mail:</label>
+                                                    <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required" placeholder="">
+                                                    <label id="widget-subscribe-form-email-error" class="error" for="widget-subscribe-form-email"></label>
+                                                </div>
+                                                <button href="#" class="button button-xlarge button-rounded ms-0 mt-2 shadow ls-0" type="submit">Enviar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-5">
+                                        <img src="one-page/images/page/design.svg" alt="Image">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" data-scrollto="#section-about" data-easing="easeInOutExpo" data-speed="1250" data-offset="65" class="one-page-arrow ms-2 mt-5" style="left: 80px;"><i class="bi-arrow-down infinite animated fadeInDown"></i></a>
+
+		</section><!-- #slider end -->
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+                    <div class="content-wrap py-0">
+                        <div id="section-about" class="text-center page-section">
+                            <div class="container">
+                                <h2 class="mx-auto mb-5 font-body" style="max-width: 700px; font-size: 40px;">Roberto Niche Web & Mobile</h2>
+                                <p class="lead mx-auto mb-5" style="max-width: 800px;">
+                                    Sou um desenvolvedor web e mobile especializado na criação de soluções digitais inovadoras e eficientes, além de oferecer serviços de análise e consultoria com Power BI. No desenvolvimento web, utilizo tecnologias modernas como HTML5, CSS3, JavaScript, React, além de Node.js e bancos de dados como MySql, PostgreSQL e SqlServer. Em mobile, desenvolvo aplicativos nativos e hibridos para Android. Adoto metodologias ágeis e uma abordagem centrada no usuário, colaborando com designers e stakeholders para garantir entregas de alta qualidade. Além disso, realizo análises de dados e requisitos de sistemas e usuários e consultorias de TI. Tambem trabalho com consultoria estratégica e desenvolvimento de Dashboard em Power BI, proporcionando insights valiosos para a tomada de decisões informadas e aprimoramento contínuo de negócios.
+                                </p>                                
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                        <div id="section-works" class="page-section pt-0">
+                            <div class="section m-0">
+                                <div class="container">
+                                    <div class="mx-auto text-center" style="max-width: 900px;">
+                                        <h2 class="mb-0 fw-light ls-1">Desenvolvo projetos que transpiram objetividade e eficiencia em todos os aspectos. Busco estabelecer um padrão de excelência em tudo o que faço. Tire um momento para navegar por alguns dos meus trabalhos públicos</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Portfolio Items
+                            ============================================= -->
+                            <div class="portfolio grid-container row g-0">
+                                <article class="portfolio-item col-lg-2 col-md-4 col-sm-0 col-12 wide" >
+                                    <div>&nbsp;</div>
+                                </article>
+                                
+                                <article class="portfolio-item col-lg-4 col-md-4 col-sm-6 col-12 wide">
+                                    <div class="grid-inner">
+                                        <div class="portfolio-image">
+                                            <a href="#">
+                                                <img src="one-page/images/portfolio/WBG01.svg" alt="WinBetGo">
+                                            </a>
+                                            <div class="bg-overlay">
+                                                <div class="bg-overlay-content flex-column" data-hover-animate="fadeIn">
+                                                    <div class="portfolio-desc p-0 text-center" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                                                        <h3><a target="_blank" href="https://winbetgo.com">Win Bet Go</a></h3>
+                                                        <span style="background-color: #fff; opacity: 80%;padding: 1em;">
+                                                            Sistema para identificar surebet em apostas esportivas
+                                                            <hr>
+                                                            Desenvolvido em parceria com 
+                                                            <br><a target="_blank" href="https://www.linkedin.com/in/junior-einsfeld-b03b1523/"><b>Junior Einsfeld</b></a>
+                                                            <br> 
+                                                            Com conhecimentos avançados em análises gráficos, mercados de ações alinhado com toda a expertise de vários anos em Tecnologia da Informação, construimos este sistema de altissima complexidade para encontrar surebets em apostas esportivas.
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-overlay-bg" data-hover-animate="fadeIn"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="portfolio-item col-lg-4 col-md-4 col-sm-6 col-12 wide">
+                                    <div class="grid-inner">
+                                        <div class="portfolio-image">
+                                            <a href="#">
+                                                <img src="one-page/images/portfolio/jogosdepalavras.jpg" alt="Locked Steel Gate">
+                                            </a>
+                                            <div class="bg-overlay">
+                                                <div class="bg-overlay-content flex-column" data-hover-animate="fadeIn">
+                                                    <div class="portfolio-desc p-0 text-center" data-hover-animate="fadeInDownSmall" data-hover-animate-out="fadeOutUpSmall" data-hover-speed="350">
+                                                        <h3><a target="_blank" href="https://play.google.com/store/apps/details?id=com.robertoniche.jogosdepalavras&pcampaignid=web_share">Jogos de palavras</a></h3>
+                                                        <span style="background-color: #fff; opacity: 80%;padding: 1em;">
+                                                            Aplicativo mobile android de jogos de palavras, forca, palavras cruzadas e palavra escondida                                                            
+                                                        <hr />
+                                                            Desenvolvido em parceria com 
+                                                            <br><a target="_blank" href="https://www.linkedin.com/in/nara-cavalli-295872242/"><b>Nara Cavali</b></a>
+                                                            <br>Que possui profundos conhecimentos na língua portuguesa onde contribuiu e contribui para o banco de dados de palavras utilizadas no jogo, alem do desenvolvimento das regras de negocios e jogabilidade.
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="bg-overlay-bg" data-hover-animate="fadeIn"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div><!-- #portfolio end -->
+
+                        </div>
+
+                        <div id="section-services" class="page-section pt-0">
+
+                            <div class="section m-0">
+                                <div class="container">
+                                    <div class="mx-auto text-center" style="max-width: 900px;">
+                                        <h2 class="mb-0 fw-light ls-1">Gostamos de trabalhar nos serviços e produtos que tempos amplo conhecimento
+                                            e se encaixe em suas necessidades. Isso nos ajuda a alcançar seus objetivos com facilidade. 
+                                            </h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row align-items-stretch">
+
+                                <div class="col-lg-12">
+                                    <div class="row align-items-stretch grid-border">
+                                        <div class="col-lg-3 col-md-6 col-padding">
+                                            <div class="feature-box fbox-center fbox-dark fbox-plain">
+                                                <div class="fbox-icon">
+                                                    <a href="#"><i class="icon-et-mobile color"></i></a>
+                                                </div>
+                                                <div class="fbox-content fbox-content-sm">
+                                                    <h3>Web sites responsive </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-padding">
+                                            <div class="feature-box fbox-center fbox-dark fbox-plain">
+                                                <div class="fbox-icon">
+                                                    <a href="#"><i class="icon-et-presentation color"></i></a>
+                                                </div>
+                                                <div class="fbox-content fbox-content-sm">
+                                                    <h3>Apresentações em Power BI</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-padding">
+                                            <div class="feature-box fbox-center fbox-dark fbox-plain">
+                                                <div class="fbox-icon">
+                                                    <a href="#"><i class="icon-et-puzzle color"></i></a>
+                                                </div>
+                                                <div class="fbox-content fbox-content-sm">
+                                                    <h3>Desenvolvimento hibrido e nativo mobile para Android</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-padding">
+                                            <div class="feature-box fbox-center fbox-dark fbox-plain">
+                                                <div class="fbox-icon">
+                                                    <a href="#"><i class="icon-et-gears color"></i></a>
+                                                </div>
+                                                <div class="fbox-content fbox-content-sm">
+                                                    <h3>Sistemas customizados</h3>
+                                                </div>
+                                            </div>
+                                        </div>                                                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark border-0">
+                    <div class="container" id="section-contact">
+                        <div class="footer-widgets-wrap">
+                            <div class="row mx-auto">
+                                <div class="col-lg-12">                                    
+                                    <h4>Entre em contato</h4>                                   
+                                    <div class="form-result"></div>
+                                    <form id="quick-contact-form" name="quick-contact-form" action="include/form.php" method="post" class="quick-contact-form mb-0">
+                                        <div class="form-process">
+                                            <div class="css3-spinner">
+                                                <div class="css3-spinner-scaler"></div>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" class="required form-control mb-2" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Nome">
+                                        <input type="text" class="required form-control email mb-2" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="E-mail">
+                                        <input type="text" class="form-control mb-2" placeholder="Fone\Whats" id="quick-contact-form-phone"  name="quick-contact-form-phone" value="" >
+                                        <textarea class="required form-control mb-2 short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Sua mensagem"></textarea>
+                                        <input type="text" class="d-none" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="">
+                                        <input type="hidden" name="prefix" value orm-botcheck="quick-contact-form-">
+                                        <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="button button-circle button-small text-transform-none fw-normal ms-0" value="submit">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="copyrights">
+                        <div class="container text-center">
+                            Copyrights Roberto Niche 2024 | All Rights Reserved
+                        </div>
+                    </div>
+                </footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="/js/plugins.min.js"></script>
+	<script src="/js/functions.bundle.js"></script>
+
+</body>
+</html>
