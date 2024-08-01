@@ -253,7 +253,7 @@
                                             </h1>
                                             <p class="mb-5">Transforme sua visão digital com sistemas robustos, sites envolventes e aplicativos mobile, aliados à análise detalhada e consultoria estratégica, tudo potencializado por dashboards interativos e insights poderosos do Power BI.</p>
                                             <div class="widget-subscribe-form-result"></div>
-                                            <form id="slider-subscribe-form" action="include/subscribe.php" method="post" class="nomb-5">
+                                            <form id="slider-subscribe-form" action="/subscribe" method="post" class="nomb-5">                                            
                                                 <div class="form-group shadow-sm border rounded">
                                                     <label for="widget-subscribe-form-email" class="color">Informe seu e-mail:</label>
                                                     <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required" placeholder="">
@@ -434,7 +434,7 @@
                                 <div class="col-lg-12">                                    
                                     <h4>Entre em contato</h4>                                   
                                     <div class="form-result"></div>
-                                    <form id="quick-contact-form" name="quick-contact-form" action="include/form.php" method="post" class="quick-contact-form mb-0">
+                                    <form id="quick-contact-form" name="quick-contact-form" action="/contact" method="post" class="quick-contact-form mb-0">
                                         <div class="form-process">
                                             <div class="css3-spinner">
                                                 <div class="css3-spinner-scaler"></div>
@@ -445,9 +445,8 @@
                                         <input type="text" class="required form-control email mb-2" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="E-mail">
                                         <input type="text" class="form-control mb-2" placeholder="Fone\Whats" id="quick-contact-form-phone"  name="quick-contact-form-phone" value="" >
                                         <textarea class="required form-control mb-2 short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Sua mensagem"></textarea>
-                                        <input type="text" class="d-none" id="quick-contact-form-botcheck" name="quick-contact-form-botcheck" value="">
-                                        <input type="hidden" name="prefix" value orm-botcheck="quick-contact-form-">
                                         <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="button button-circle button-small text-transform-none fw-normal ms-0" value="submit">Enviar</button>
+                                        <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeUqBsqAAAAAEGGzPvowkn0PxB9zpPw9ghd4zrF" data-callback="sendForm" data-size="invisible"></div>
                                     </form>
                                 </div>
                             </div>
@@ -471,6 +470,30 @@
 	============================================= -->
 	<script src="/js/plugins.min.js"></script>
 	<script src="/js/functions.bundle.js"></script>
+        
+        <script src='https://www.google.com/recaptcha/api.js'></script> 
+        
+        <script type="text/javascript">
+            let form = document.querySelector('#quick-contact-form');
+            form.addEventListener('submit',  e => {
+                e.preventDefault();
+                let name = document.querySelector('#quick-contact-form-name');
+                let email = document.querySelector('#quick-contact-form-email');
+                let fone = document.querySelector('#quick-contact-form-phone');
+                let message = document.querySelector('#quick-contact-form-message');
+                
+                
+                if(!name.value || !email.value) {
+                    alert('Nome e Email são Obrigatorios');
+                } else{
+                    grecaptcha.execute();
+                }       
+            });
+            function sendForm(){
+                alert("reCAPTCHA funcionou");
+            }
+</script>
+
 
 </body>
 </html>
