@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="pt-BR">
 <head>
 
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
 	<meta name="author" content="Roberto Niche">
@@ -260,6 +261,7 @@
                                                     <label id="widget-subscribe-form-email-error" class="error" for="widget-subscribe-form-email"></label>
                                                 </div>
                                                 <button href="#" class="button button-xlarge button-rounded ms-0 mt-2 shadow ls-0" type="submit">Enviar</button>
+                                                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeUqBsqAAAAAEGGzPvowkn0PxB9zpPw9ghd4zrF" data-callback="sendForm" data-size="invisible"></div>
                                             </form>
                                         </div>
                                     </div>
@@ -428,37 +430,37 @@
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark border-0">
-                    <div class="container" id="section-contact">
-                        <div class="footer-widgets-wrap">
-                            <div class="row mx-auto">
-                                <div class="col-lg-12">                                    
-                                    <h4>Entre em contato</h4>                                   
-                                    <div class="form-result"></div>
-                                    <form id="quick-contact-form" name="quick-contact-form" action="/contact" method="post" class="quick-contact-form mb-0">
-                                        <div class="form-process">
-                                            <div class="css3-spinner">
-                                                <div class="css3-spinner-scaler"></div>
-                                            </div>
-                                        </div>
-
-                                        <input type="text" class="required form-control mb-2" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Nome">
-                                        <input type="text" class="required form-control email mb-2" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="E-mail">
-                                        <input type="text" class="form-control mb-2" placeholder="Fone\Whats" id="quick-contact-form-phone"  name="quick-contact-form-phone" value="" >
-                                        <textarea class="required form-control mb-2 short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Sua mensagem"></textarea>
-                                        <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="button button-circle button-small text-transform-none fw-normal ms-0" value="submit">Enviar</button>
-                                        <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeUqBsqAAAAAEGGzPvowkn0PxB9zpPw9ghd4zrF" data-callback="sendForm" data-size="invisible"></div>
-                                    </form>
+            <div class="container form-widget" id="form-widget" data-alert-type="inline">
+                <div class="footer-widgets-wrap">
+                    <div class="row mx-auto">
+                        <div class="col-lg-12" data-loader="button" >
+                            <h4>Entre em contato</h4>
+                            <div class="form-result"></div>
+                            <form id="quick-contact-form" name="quick-contact-form" action="/contact" method="post" class="quick-contact-form mb-0">
+                                <div class="form-process">
+                                    <div class="css3-spinner">
+                                        <div class="css3-spinner-scaler"></div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="copyrights">
-                        <div class="container text-center">
-                            Copyrights Roberto Niche 2024 | All Rights Reserved
+                                <input type="text" class="required form-control mb-2" id="quick-contact-form-name" name="quick-contact-form-name" value="" placeholder="Nome">
+                                <input type="text" class="required form-control email mb-2" id="quick-contact-form-email" name="quick-contact-form-email" value="" placeholder="E-mail">
+                                <input type="text" class="form-control mb-2" placeholder="Fone\Whats" id="quick-contact-form-phone"  name="quick-contact-form-phone" value="Fone" >
+                                <textarea class="required form-control mb-2 short-textarea" id="quick-contact-form-message" name="quick-contact-form-message" rows="4" cols="30" placeholder="Sua mensagem"></textarea>
+                                <button type="submit" id="quick-contact-form-submit" name="quick-contact-form-submit" class="button button-circle button-small text-transform-none fw-normal ms-0" value="submit">Enviar</button>
+                                <div id='recaptcha' class="g-recaptcha" data-sitekey="6LeUqBsqAAAAAEGGzPvowkn0PxB9zpPw9ghd4zrF" data-callback="sendForm" data-size="invisible"></div>
+                            </form>
                         </div>
                     </div>
-                </footer><!-- #footer end -->
+                </div>
+            </div>
+
+            <div id="copyrights">
+                <div class="container text-center">
+                    Copyrights Roberto Niche 2024 | All Rights Reserved
+                </div>
+            </div>
+        </footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
 
@@ -470,30 +472,5 @@
 	============================================= -->
 	<script src="/js/plugins.min.js"></script>
 	<script src="/js/functions.bundle.js"></script>
-        
-        <script src='https://www.google.com/recaptcha/api.js'></script> 
-        
-        <script type="text/javascript">
-            let form = document.querySelector('#quick-contact-form');
-            form.addEventListener('submit',  e => {
-                e.preventDefault();
-                let name = document.querySelector('#quick-contact-form-name');
-                let email = document.querySelector('#quick-contact-form-email');
-                let fone = document.querySelector('#quick-contact-form-phone');
-                let message = document.querySelector('#quick-contact-form-message');
-                
-                
-                if(!name.value || !email.value) {
-                    alert('Nome e Email são Obrigatorios');
-                } else{
-                    grecaptcha.execute();
-                }       
-            });
-            function sendForm(){
-                alert("reCAPTCHA funcionou");
-            }
-</script>
-
-
 </body>
 </html>
