@@ -26,6 +26,8 @@
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/custom.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.min.css" />
         
         <link id="favicon" rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico"/>
 
@@ -472,5 +474,41 @@
 	============================================= -->
 	<script src="/js/plugins.min.js"></script>
 	<script src="/js/functions.bundle.js"></script>
+    <script defer type="text/javascript" src="https://cdn.kiprotect.com/klaro/v0.7.22/klaro.js"></script>
+    <script>
+
+        const config = {
+            translations: {
+                en: {
+                    googleAnalytics: {
+                        title: "Google Analytics",
+                        description: "The analytics service ran by a most definitely non-evil company.",
+                    },
+                    purposes: {
+                        analytics: "Google Analytics",
+                        styling: "Styling",
+                    }
+                }
+            },
+            apps: [
+                {
+                    name: "googleAnalytics",
+                    purposes: ["analytics"],
+                    title: "Google Analytics",
+                    description: "Google Analytics, ajuda a verificar o desempenho do site para melhoramento continuo. Guarda as páginas que você acessou de forma anônima",
+
+                },
+                {
+                    name: "bootstrap",
+                    purposes: ["styling"],
+                    title: "Bootstrap (external resource)",
+                    description: "Guarda suas preferências de layout e cores quando configurados"
+                },
+            ],
+        };
+        window.addEventListener('load', function() {
+            klaro.setup(config);
+        });
+    </script>
 </body>
 </html>
