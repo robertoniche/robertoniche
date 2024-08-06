@@ -6,6 +6,7 @@ use App\Entity\Email;
 use App\Repository\EmailRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -39,11 +40,17 @@ class IndexController extends AbstractController
             ->text('Possivel cliente entrando pelo subscribe!')
             ->html('<p>Possivel cliente entrando pelo subscribe!</p><p>'.$email->getEmail().'</p>');
 
-        $mailer->send($sendMail);
+
+        try {
+            $sendMailResponse = $mailer->send($sendMail);
+        } catch (TransportExceptionInterface $e) {
+            $sendMailResponse = $e->getMessage();
+        }
 
         return new JsonResponse([
             "alert" => "success",
-            "message" => "Recebemos seu e-mail <strong>".$request->request->get('widget-subscribe-form-email')."</strong>. Em breve estaremos entrando em contato. Obrigado"
+            "message" => "Recebemos seu e-mail <strong>".$request->request->get('widget-subscribe-form-email')."</strong>. Em breve estaremos entrando em contato. Obrigado",
+            "messagemail" => $sendMailResponse
         ]);
     }
     
