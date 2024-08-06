@@ -8867,5 +8867,6 @@ if( typeof jQuery !== 'undefined' ) {
 
 
 function sendForm(){
+	grecaptcha.reset();
 	jQuery(Glob_Form).ajaxSubmit(Glob_CallBack);
 }

@@ -72,7 +72,7 @@ class IndexController extends AbstractController
         $sendMail = (new SymfonyEmail())
             ->from('robertoniche@robertoniche.com.br')
             ->to('robertoniche@robertoniche.com.br')
-            ->subject('New subscribe!')
+            ->subject('New contact!')
             ->text('Possivel cliente entrando pelo subscribe!')
             ->html('<p>Possivel cliente entrando pelo subscribe!</p>
                             <p>email: '.$email->getEmail().'</p>
